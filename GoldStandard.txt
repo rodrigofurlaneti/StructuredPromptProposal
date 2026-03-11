@@ -1,0 +1,44 @@
+Essa estrutura de quatro pilares é o "padrão ouro" para engenharia de prompt. Ela remove a ambiguidade e força a IA a processar sua solicitação como um documento de especificação técnica, em vez de um chat informal.
+
+Para o Claude (e modelos da família Gemini 1.5/2.0), essa organização em blocos é a que melhor evita "alucinações" ou códigos incompletos.
+
+Aqui está como você deve preencher cada bloco para o seu projeto FSI.SupportPointSystem.BackEnd:
+
+1. Contexto e Objetivo
+O que colocar: O "porquê" do projeto.
+
+Exemplo: "Atue como Arquiteto .NET Sênior. O objetivo é o Reengineering total do sistema FSI.SupportPointSystem.BackEnd. O sistema atual em produção (anexo) serve apenas como referência de Regras de Negócio; a implementação técnica deve ser 100% nova, focada em escalabilidade e manutenibilidade."
+
+2. Requisitos Técnicos
+O que colocar: A "receita" tecnológica.
+
+Destaque: Mencione .NET 9 e C# 13.
+
+Padrões: Clean Architecture, DDD, CQRS (com MediatR), JWT e EF Core para a persistência.
+
+Regras: Aplique SOLID e evite acoplamento entre as camadas.
+
+3. Estrutura de Testes e Validação
+O que colocar: Como você quer garantir que funciona.
+
+Ferramentas: XUnit para Unit Tests, FluentAssertions e o BDD (especifique o uso de arquivos .feature do Gherkin para descrever os cenários de pontos de suporte).
+
+4. Entregável Esperado
+O que colocar: O formato da saída.
+
+Dica: Peça primeiro a Estrutura da Solução (.sln) e o Domínio. Como o projeto é grande, se você pedir "tudo" de uma vez, a IA pode cortar o código no meio.
+
+Exemplo: "Gere primeiro a estrutura de pastas e as Entidades de Domínio. Em seguida, aguarde minha confirmação para gerar os Handlers do CQRS."
+
+Por que dividir assim é a melhor forma para a IA?
+As IAs de linguagem funcionam por atenção. Quando você mistura a tecnologia (.NET 9) com a regra de negócio (como o ponto de suporte funciona) no mesmo parágrafo, a "atenção" do modelo se divide.
+
+Ao separar em 4 blocos:
+
+Ela entende o Papel dela (Arquiteto).
+
+Ela carrega o Dicionário técnico (CQRS/DDD).
+
+Ela estabelece os Critérios de Aceite (BDD).
+
+Ela sabe Como formatar a resposta.
