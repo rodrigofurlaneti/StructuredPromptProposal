@@ -1,0 +1,33 @@
+Contexto e Objetivo:
+Atue como um Arquiteto de Software Sênior especializado em ecossistema .NET. O objetivo é realizar o Reengineering do projeto FSI.SupportPointSystem.BackEnd. O sistema atual está em anexo para referência de regras de negócio, mas a nova implementação deve ignorar vícios de código antigo e focar em excelência técnica.
+
+Requisitos Técnicos:
+
+Stack: .NET 9.0 (C# 13).
+
+Arquitetura: Clean Architecture integrada com os princípios do DDD (Domain-Driven Design).
+
+Padrões de Design: CQRS (separação de commands e queries) utilizando a biblioteca MediatR.
+
+Segurança: Autenticação e Autorização via JWT (configurar Middleware e Swagger).
+
+Qualidade de Código: Clean Code, SOLID e Object Calisthenics.
+
+Estrutura de Testes e Validação:
+
+BDD (Behavior-Driven Development): Utilize SpecFlow ou Reqnroll para definir os cenários de aceitação baseados nas regras de negócio do anexo.
+
+Testes: Implementar Testes de Unidade (xUnit/FluentAssertions) e Testes Funcionais/Integração para os endpoints da API.
+
+Entregável Esperado:
+Gere a estrutura completa da solução (.sln), organizada em:
+
+Domain: Entidades, interfaces de repositório e Domain Services.
+
+Application: DTOs, Handlers do MediatR, Mappers e Behaviors (Validation).
+
+Infrastructure: Implementação de persistência (EF Core) e serviços externos.
+
+API: Controllers enxutos e configurações de DI.
+
+Tests: Projetos de testes unitários e os arquivos .feature do BDD.
