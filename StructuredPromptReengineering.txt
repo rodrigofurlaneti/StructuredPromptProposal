@@ -1,0 +1,46 @@
+Prompt Estruturado: Reengenharia FSI.SupportPointSystem.BackEnd
+
+1. Contexto e Objetivo
+Papel: Atue como um Arquiteto de Software Sênior e Especialista em Ecossistema .NET.
+Cenário: O projeto atual FSI.SupportPointSystem.BackEnd está em produção (conforme anexo), mas precisa de uma reescrita total (Reengineering). O objetivo é criar uma API moderna, resiliente e seguindo padrões de mercado para suportar o crescimento do sistema de pontos de suporte. O anexo deve ser usado estritamente para extrair as regras de negócio, enquanto a implementação técnica deve ser iniciada do zero.
+
+2. Requisitos Técnicos
+Stack Tecnológica:
+
+Runtime: .NET 9.0 (C# 13).
+
+Arquitetura: Clean Architecture com foco em Domain-Driven Design (DDD).
+
+Persistência: Entity Framework Core (Code First) com suporte a Migrations.
+
+Padrões de Design:
+
+CQRS: Separação clara entre Commands (escrita) e Queries (leitura) utilizando a biblioteca MediatR.
+
+Result Pattern: Para respostas da camada de aplicação, evitando exceções para controle de fluxo.
+
+Validation: Utilização do FluentValidation integrado ao pipeline do MediatR.
+
+Segurança: Autenticação e Autorização via JWT Bearer Token, com Roles e Claims bem definidas.
+
+Qualidade: Clean Code, SOLID e princípios de Object Calisthenics (ex: classes pequenas, sem 'else', encapsulamento forte).
+
+3. Estrutura de Testes e Validação
+Abordagem: Test-First onde possível.
+
+BDD (Behavior-Driven Development): Escrita de cenários em Gherkin (.feature) para validar as regras de negócio de pontos de suporte (ex: criação de ponto, validação de coordenadas, status de ativação).
+
+Unit Tests: xUnit + Moq + FluentAssertions para testar a lógica do domínio e Handlers.
+
+Integration Tests: Utilização de WebApplicationFactory para testar os endpoints da API de ponta a ponta, simulando o banco de dados em memória ou via containers.
+
+4. Entregável Esperado
+Solicito que a entrega seja dividida para garantir profundidade. Comece gerando:
+
+A Estrutura da Solução (.sln): Divisão dos projetos (Domain, Application, Infrastructure, API, Tests).
+
+Domain Layer: Entidades ricas (Domain Entities), Value Objects (ex: Endereço/Coordenadas), Interfaces de Repositório e Domain Events.
+
+Application Layer (Exemplo inicial): Um Command de criação de "Support Point" com seu respectivo Handler, Validator e DTO.
+
+Cenário BDD: Um arquivo .feature representando o fluxo principal de sucesso da regra de negócio contida no anexo.
